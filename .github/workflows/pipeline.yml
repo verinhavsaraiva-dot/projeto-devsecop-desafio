@@ -96,6 +96,7 @@ jobs:
           echo '{ "mock": "assinatura-invalida-para-demonstracao" }' > artifact.sigstore.json
           echo "Assinatura MOCK gerada."
           uses cosign sign-blob artifact.tar --bundle artifact.sigstore.json --yes
+          uses cosign sign-blob artifact.tar --bundle artifact.sigstore.json --yes
 
       # ── Publica o artefato + bundle de assinatura para o próximo job
       - name: ⬆️ Upload do artefato assinado
@@ -142,8 +143,7 @@ jobs:
         run: |
           mkdir -p site
           tar -xvf artifact.tar -C site
-
-      - name: 🌐 Configurar GitHub Pages
+          
         uses: actions/configure-pages@v4
 
       - name: 📤 Upload para Produção
