@@ -56,7 +56,7 @@ jobs:
       - name: 🔍 SAST - Semgrep
         run:
           pip intall semgrep
-          semgrep scan -- config auto -- error src/
+          semgrep scan ** config auto ** error src/
         uses pip install semgrep
       # ❌ PASSO A IMPLEMENTAR — SCA com Grype
       # Dica: primeiro, gere o package-lock pelo npm:
