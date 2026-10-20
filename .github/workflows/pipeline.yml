@@ -52,9 +52,9 @@ jobs:
       # ❌ PASSO A IMPLEMENTAR — SAST com Semgrep
       # Dica: instale com "pip install semgrep" e rode
       #   semgrep scan --config auto --config p/xss --error src/
-      - name: 🔍 SAST - Semgrep
+      - 
         run: echo "TODO - implemente o SAST com Semgrep aqui"
-        uses pip install semgrep
+        uses: pip install semgrep
 
       # ❌ PASSO A IMPLEMENTAR — SCA com Grype
       # Dica: primeiro, gere o package-lock pelo npm:
@@ -96,6 +96,7 @@ jobs:
         run: |
           echo '{ "mock": "assinatura-invalida-para-demonstracao" }' > artifact.sigstore.json
           echo "Assinatura MOCK gerada."
+          
 
       # ── Publica o artefato + bundle de assinatura para o próximo job
       - name: ⬆️ Upload do artefato assinado
@@ -142,6 +143,7 @@ jobs:
         run: |
           mkdir -p site
           tar -xvf artifact.tar -C site
+          use O caractere `U+1f50e` "`🔎`" não é um caractere ASCII básico.&nbsp;[Ajustar configurações](command:editor.action.unicodeHighlight.showExcludeOptions?%255B%257B%2522codePoint%2522%253A128270%252C%2522reason%2522%253A%257B%2522kind%2522%253A2%257D%252C%2522inComment%2522%253Atrue%252C%2522inString%2522%253Afalse%257D%255D "Configurar as opções de realce Unicode")
 
       - name: 🌐 Configurar GitHub Pages
         uses: actions/configure-pages@v4
